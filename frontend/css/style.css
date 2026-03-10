@@ -1,0 +1,510 @@
+/* Custom CSS for Resume-Job Description Matcher */
+
+/* ===== Base Styles ===== */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --success-gradient: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --info-gradient: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+    --light-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.bg-gradient-primary {
+    background: var(--primary-gradient);
+}
+
+.bg-gradient-success {
+    background: var(--success-gradient);
+}
+
+.bg-gradient-info {
+    background: var(--info-gradient);
+}
+
+.bg-gradient-light {
+    background: var(--light-gradient);
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-animation {
+    position: relative;
+    height: 200px;
+}
+
+.hero-animation i {
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-animation i:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+    color: #28a745;
+}
+
+.hero-animation i:nth-child(2) {
+    left: 50%;
+    top: 30px;
+    animation-delay: 1s;
+    color: #ffc107;
+}
+
+.hero-animation i:nth-child(3) {
+    right: 20%;
+    animation-delay: 2s;
+    color: #17a2b8;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ===== Navigation ===== */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* ===== Cards ===== */
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    border: none;
+    font-weight: 600;
+}
+
+/* ===== Score Cards ===== */
+.score-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--light-gradient);
+    transition: transform 0.3s ease;
+}
+
+.score-card:hover {
+    transform: scale(1.05);
+}
+
+.score-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.score-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.score-category {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 5px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.score-category.High {
+    background: #d4edda;
+    color: #155724;
+}
+
+.score-category.Medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.score-category.Low {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.score-subtext {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* ===== Skills Lists ===== */
+.skills-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1);
+}
+
+.skill-badge.matched {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.skill-badge.missing {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ===== Forms ===== */
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+}
+
+.btn-success {
+    background: var(--success-gradient);
+}
+
+.btn-info {
+    background: var(--info-gradient);
+}
+
+/* ===== Loading States ===== */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== History Section ===== */
+.history-item {
+    border-left: 4px solid #667eea;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+    border-radius: 0 10px 10px 0;
+    transition: transform 0.3s ease;
+}
+
+.history-item:hover {
+    transform: translateX(5px);
+    background: #e9ecef;
+}
+
+.history-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.history-score {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.history-preview {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* ===== AI Feedback Section ===== */
+.ai-feedback-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #17a2b8;
+}
+
+.skill-item {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(5px);
+    border-color: #667eea;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.skill-importance {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.resource-item {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.resource-item:hover {
+    background: #f8f9fa;
+    border-color: #28a745;
+}
+
+.resource-skill {
+    font-weight: 600;
+    color: #28a745;
+    margin-bottom: 5px;
+}
+
+.resource-course {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 3px;
+}
+
+.resource-platform {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.resource-link {
+    font-size: 0.9rem;
+    color: #17a2b8;
+    text-decoration: none;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Feature Cards ===== */
+.feature-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+    
+    .hero-section .display-4 {
+        font-size: 2rem;
+    }
+    
+    .score-value {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .hero-animation {
+        height: 150px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card-body {
+        padding: 20px;
+    }
+    
+    .score-card {
+        padding: 15px;
+    }
+    
+    .score-value {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section .display-4 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== Smooth Scrolling ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Custom Scrollbar ===== */
+.skills-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.skills-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.skills-list::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.skills-list::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* ===== Animation Classes ===== */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* ===== Utility Classes ===== */
+.text-gradient-primary {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-custom {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.border-gradient {
+    border: 2px solid;
+    border-image: var(--primary-gradient) 1;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .navbar, .hero-section, footer, .btn, #history {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
